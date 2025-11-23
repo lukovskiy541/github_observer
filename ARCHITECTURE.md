@@ -14,7 +14,7 @@
 
 ```mermaid
 sequenceDiagram
-    participant U as Кандидат/рекрутер
+    participant U as Рекрутер
     participant TG as Telegram
     participant B as bot.py
     participant AG as AIAgent<br/>Gemini chat
