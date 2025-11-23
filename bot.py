@@ -65,7 +65,12 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """
     Handler for text messages.
     """
-    user_text = update.message.text
+    message = update.effective_message
+    if not message or not message.text:
+        logger.info("Received update without a text message. Skipping handling.")
+        return
+
+    user_text = message.text
     chat_id = update.effective_chat.id
 
     if not agent:
